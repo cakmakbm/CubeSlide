@@ -72,30 +72,24 @@ public class ChunkManager : MonoBehaviour {
 
     }*/
    
-   private void CreateLevel(Chunk[] levelChunks) {
+   private void CreateLevel(Chunk[] levelChunks)
+{
+    
+    Vector3 nextPosition = Vector3.zero;
+    Quaternion nextRotate = Quaternion.identity; 
 
-       Vector3 chunkPosition = Vector3.zero;
-       
+    for (int i = 0; i < levelChunks.Length; i++)
+    {
+        Chunk chunkPrefab = levelChunks[i];
 
-       for (int i = 0; i <levelChunks.Length ; i++) {
-
-           Chunk chunkToCreate = levelChunks[i];
-           chunkPosition.y = -4.6f;
-           
-
-           if (i>0) {
-               
-               chunkPosition.z += chunkToCreate.GetLength() / 2;
         
+        Chunk chunkInstance = Instantiate(chunkPrefab, nextPosition, nextRotate, transform);
 
-           }
-
-           Chunk chunkInstance = Instantiate(chunkToCreate, chunkPosition, Quaternion.identity, transform);
-
-           chunkPosition.z += chunkInstance.GetLength() / 2;
-
-       }
-   }
+       
+        nextPosition = chunkInstance.BitisNoktasi.position;
+        nextRotate = chunkInstance.BitisNoktasi.rotation;
+    }
+}
 
 
     private int GetLevel() {

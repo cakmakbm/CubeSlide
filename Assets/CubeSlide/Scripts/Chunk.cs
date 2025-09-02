@@ -4,29 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum ChunkDirection
-{
-   ForwardZ,
-   RightX,
-   LeftX,
-   BackwardZ
-}
+
 public class Chunk : MonoBehaviour {
-   [SerializeField] private float length = 10f;
    [SerializeField] private Vector3 chunkSize;
-   [SerializeField] private ChunkDirection direction = ChunkDirection.ForwardZ;
+   public enum ChunkType { Duz, SagaDonus, SolaDonus }
+   [SerializeField] public ChunkType type;
+
+   // Her chunk prefab'ının ucunda bir "BitisNoktasi" objesi olmalı
+   [SerializeField] public Transform BitisNoktasi; 
    
 
 
 
-   public float GetLength() {
-      
-      return length;
-
-   }
+   
 
   
-   public ChunkDirection GetDirection() => direction;
+   
 
    private void OnDrawGizmos() {
       
