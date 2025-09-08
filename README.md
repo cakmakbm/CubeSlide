@@ -4,7 +4,7 @@
 
 ## Screenshots
 
-![Gameplay 1](cube1.png)
+![Gameplay 1](cube3.png)
 ![Gameplay 2](cube2.png)
 
 ---
