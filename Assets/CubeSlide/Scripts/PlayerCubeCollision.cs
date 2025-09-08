@@ -75,6 +75,12 @@ public class PlayerCubeCollision : MonoBehaviour {
       Destroy(gameObject);
       
     }
+
+    if (collider.gameObject.CompareTag("Finish")) {
+      
+     PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+      GameManager.instance.SetGameState(GameManager.GameState.LevelComplete);
+    }
     
     
   }

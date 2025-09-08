@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
    [SerializeField] private float slideSpeed;
    [SerializeField] private float roadWith;
    [SerializeField] private float rotationSpeed;
+
+   [SerializeField] private Transform cubeParent;
    
    private Quaternion aimRotation;
    private bool canMove;
@@ -30,6 +32,20 @@ public class PlayerMovement : MonoBehaviour {
 
          MoveForward();
          // MoveWithInput();
+      }
+      
+      if (!GameManager.instance.IsGameState()) {
+         
+         return;
+         
+      }
+      
+
+      if (cubeParent.childCount <= 0) {
+         
+         GameManager.instance.SetGameState(GameManager.GameState.GameOver);
+         
+         
       }
       
 
@@ -82,29 +98,7 @@ public class PlayerMovement : MonoBehaviour {
       
    }
 
-   /*private void MoveWithInput() {
-
-      if (Input.GetMouseButtonDown(0)) {
-
-         clickedScreenPosition = Input.mousePosition;
-         clickedPlayerPosition = transform.position;
-         
-
-      }
-
-      else if (Input.GetMouseButton(0)) {
-
-         float xScreenDifference = Input.mousePosition.x - clickedScreenPosition.x;
-         xScreenDifference /= Screen.width;
-         xScreenDifference *= slideSpeed;
-         Vector3 position = transform.position;
-         position.x = clickedPlayerPosition.x + xScreenDifference;
-         //position.x = Mathf.Clamp(position.x, -roadWith / 2, roadWith / 2);
-
-         transform.position = position;
-
-      }
-   }*/
+  
 
    public void StartTurn(float rotationAngle)
    {
