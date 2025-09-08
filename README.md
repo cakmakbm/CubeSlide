@@ -1,44 +1,68 @@
-Cube Slide
-This project is a clone of the popular mobile game "Cube Surfer," developed using the Unity game engine and C#. The main objective of the game is to collect cubes to raise the player's height and advance while avoiding obstacles.
+# CubeSlide — Cube Surfer®-style Hyper-Casual Clone (Unity)
 
-Gameplay Screenshots
-Here are some screenshots from the game:
+> A from-scratch recreation of the core “swerve + stack” mechanic inspired by **Cube Surfer®**. Built to practice Unity/C# gameplay architecture, clean input handling, and simple level interactions.  
 
-A general view of the gameplay, showing the player collecting cubes.
+<p align="center">
+  <!-- Replace with your own images -->
+  <img src="docs/images/ss-1.png" width="31%" alt="Gameplay 1"/>
+  <img src="docs/images/ss-2.png" width="31%" alt="Gameplay 2"/>
+  <img src="docs/images/ss-3.png" width="31%" alt="Gameplay 3"/>
+</p>
 
-The player navigating through obstacles or nearing the finish line.
+---
 
-Gameplay
-The player automatically moves forward on the platform.
+## Overview
 
-You can move the character by swiping left and right on the screen.
+- **Engine:** Unity  
+- **Language:** C# (primary), some ShaderLab  
+- **Goal:** Collect cubes to build a stack under the player, avoid/consume obstacles, and reach the finish.  
+- **Why:** Learning project focused on mobile-friendly controls, object interactions, and lightweight game flow. :contentReference[oaicite:1]{index=1}
 
-Collect the cubes on the path to increase the height of your stack.
+---
 
-You need to have a sufficient number of cubes to pass under the wall-like obstacles. If you don't have enough cubes, you lose the game.
+## Gameplay
 
-Reach the finish line to complete the level.
+- The player **auto-moves forward**.
+- **Swerve** left/right by dragging to steer.
+- **Collect cubes** to increase the stack under the character.
+- **Walls/obstacles** consume cubes. If you don’t have enough height, you fail.
+- Cross the **finish line** to complete the level.
 
-Project Files and Scripts
-Below are the C# scripts that manage the core mechanics of the project, along with their descriptions:
+**Controls**
+- **Mobile:** Drag left/right.
+- **Editor/PC:** Drag with the mouse (touch simulated).
 
-PlayerController.cs: Controls the player's core movements and interactions with game mechanics.
+---
 
-SwerveInput.cs & SwerveMovement.cs: These scripts detect the player's "swerve" input (sliding a finger across the screen) and handle the character's left-right movement accordingly.
+## Features
 
-CollectableCube.cs: Defines the behavior of the cubes that the player can collect.
+- Smooth **swerve input** & horizontal movement
+- Dynamic **stacking** of collected cubes
+- **Obstacle** logic that reduces the stack on collision
+- Simple **camera follow**
+- **Game Manager** to handle states (start / game over / restart) and UI
 
-Collector.cs: Manages the cube collection mechanic. It ensures that collected cubes are added to the stack beneath the player.
+---
 
-Obstacle.cs: Defines the behavior of obstacles. When the player hits an obstacle, the reduction of cubes is managed by this script.
+## Project Structure & Key Scripts
 
-CameraFollow.cs: Ensures the camera follows the player from a set distance.
+> Core scripts that drive the main loop and interactions:
 
-GameManager.cs: Manages the overall game state (start, game over, restart) and the user interface (UI).
+- `PlayerController.cs` — Player forward motion & high-level interactions
+- `SwerveInput.cs` / `SwerveMovement.cs` — Touch/mouse delta capture and lateral movement
+- `CollectableCube.cs` — Behavior for pick-up cubes
+- `Collector.cs` — Adds collected cubes to the **stack** under the player
+- `Obstacle.cs` — Handles stack reduction / failure conditions on hit
+- `CameraFollow.cs` — Keeps the camera tracking the player
+- `GameManager.cs` — Game state + lightweight UI management
 
-How to Run
-Clone this repository to your local machine (git clone).
+> **Scene:** e.g., `Assets/Scenes/SampleScene.unity` (update if different)
 
-Open the project through Unity Hub.
+---
 
-Press the Play button in the Unity Editor to test the game.
+## Getting Started
+
+1. **Clone**
+   ```bash
+   git clone https://github.com/cakmakbm/CubeSlide.git
+   cd CubeSlide
