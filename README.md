@@ -2,12 +2,10 @@
 
 > A from-scratch recreation of the core “swerve + stack” mechanic inspired by **Cube Surfer®**. Built to practice Unity/C# gameplay architecture, clean input handling, and simple level interactions.  
 
-<p align="center">
-  <!-- Replace with your own images -->
-  <img src="docs/images/ss-1.png" width="31%" alt="Gameplay 1"/>
-  <img src="docs/images/ss-2.png" width="31%" alt="Gameplay 2"/>
-  <img src="docs/images/ss-3.png" width="31%" alt="Gameplay 3"/>
-</p>
+## Screenshots
+
+![Gameplay 1](cube1.png)
+![Gameplay 2](cube2.png)
 
 ---
 
