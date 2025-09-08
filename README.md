@@ -54,7 +54,7 @@
 - `CameraFollow.cs` — Keeps the camera tracking the player
 - `GameManager.cs` — Game state + lightweight UI management
 
-> **Scene:** e.g., `Assets/Scenes/SampleScene.unity` (update if different)
+> **Scene:** e.g., `Assets/Scenes/SampleScene.unity` 
 
 ---
 
