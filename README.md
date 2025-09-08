@@ -16,7 +16,7 @@
 - **Engine:** Unity  
 - **Language:** C# (primary), some ShaderLab  
 - **Goal:** Collect cubes to build a stack under the player, avoid/consume obstacles, and reach the finish.  
-- **Why:** Learning project focused on mobile-friendly controls, object interactions, and lightweight game flow. :contentReference[oaicite:1]{index=1}
+- **Why:** Learning project focused on mobile-friendly controls, object interactions, and lightweight game flow. 
 
 ---
 
